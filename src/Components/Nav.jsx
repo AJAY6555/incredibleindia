@@ -1,114 +1,82 @@
-import React from "react";
-import { useState } from "react";
-
+import React, { useState } from "react";
 import { FaGlobe } from "react-icons/fa";
 import { FiSearch, FiUser, FiHeart, FiMenu } from "react-icons/fi";
 
-
 const Nav = () => {
-  const [background, Setbackground] = useState(false);
-  const handleMouseEnter = () => {
-    Setbackground(true);
-  };
-  const handleMouseLeave = () => {
-    Setbackground(false);
-  };
+  const [isHover, setIsHover] = useState(false);
+
   return (
-    <>
-      <nav>
-        <div
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          style={{
-            backgroundColor: background ? "rgba(0,0,0,0.9)" : "transparent",
-          }}
-          className="navber fixed top-0 left-0 right-0 w-full flex justify-between py-2 items-center px-6 text-white z-50 transition-colors duration-300"
-        >
-          <ul className="flex gap-4 list-none p-0 m-0">
-            <li>
-              
-                Incredible India
-             
+    <nav className="fixed top-0 left-0 w-full z-50">
+      <div
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+        className={`transition-colors duration-300 ${
+          isHover ? "bg-black/90" : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3 text-white">
+          
+          {/* Logo */}
+          <div className="flex items-center">
+            <img
+              src="https://s7ap1.scene7.com/is/content/incredibleindia/incredible-india-logo?qlt=82&ts=1742168999622"
+              alt="Incredible India"
+              className="h-10 w-auto object-contain cursor-pointer"
+            />
+          </div>
+
+          {/* Center Menu */}
+          <ul className="hidden md:flex gap-8 text-sm font-medium">
+            <li className="cursor-pointer hover:text-orange-400 transition">
+              Destinations
+            </li>
+            <li className="cursor-pointer hover:text-orange-400 transition">
+              Experiences
+            </li>
+            <li className="cursor-pointer hover:text-orange-400 transition">
+              Travel Guide
             </li>
           </ul>
-          <div className="flex gap-6 items-center text-white">
-            <li>
-             
-                Destinations
-          
-            </li>
 
-            <li>
-             
-                Experiences
-             
-            </li>
-
-            <li>
-             
-             
-            </li>
-          </div>
-          <div className="flex items-center gap-4 text-white">
+          {/* Right Icons */}
+          <div className="flex items-center gap-4">
+            
             {/* Language */}
-            <button
-              aria-label="Language"
-              className="flex items-center gap-2 text-white hover:text-orange-400"
-            >
+            <button className="flex items-center gap-1 hover:text-orange-400 transition">
               <FaGlobe />
-              <span className="text-sm font-medium">EN</span>
+              <span className="text-sm">EN</span>
             </button>
 
-            {/* Divider */}
             <div className="h-6 w-px bg-white/40"></div>
 
-            {/* Search */}
-            <button
-              aria-label="Search"
-              className="cursor-pointer text-white hover:text-orange-400"
-            >
-              <FiSearch />
+            <button className="hover:text-orange-400 transition">
+              <FiSearch size={18} />
             </button>
 
-            {/* Divider */}
             <div className="h-6 w-px bg-white/40"></div>
 
-            {/* User */}
-            <button
-              aria-label="User"
-              className="cursor-pointer text-white hover:text-orange-400"
-            >
-              <FiUser />
+            <button className="hover:text-orange-400 transition">
+              <FiUser size={18} />
             </button>
 
-            {/* Divider */}
             <div className="h-6 w-px bg-white/40"></div>
 
-            {/* Wishlist */}
-            <button
-              aria-label="Wishlist"
-              className="cursor-pointer text-white hover:text-orange-400 border-l border-r border-white px-2"
-            >
-              <FiHeart />
+            <button className="hover:text-orange-400 transition">
+              <FiHeart size={18} />
             </button>
 
-            {/* Divider */}
             <div className="h-6 w-px bg-white/40"></div>
 
-            {/* Menu */}
-            <button
-              aria-label="Menu"
-              className="cursor-pointer hover:text-orange-400 text-2xl"
-            >
+            {/* Mobile Menu */}
+            <button className="text-2xl hover:text-orange-400 transition md:hidden">
               <FiMenu />
             </button>
           </div>
         </div>
-      
-      </nav>
-     
-    </>
+      </div>
+    </nav>
   );
 };
 
 export default Nav;
+
