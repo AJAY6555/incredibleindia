@@ -31,7 +31,6 @@ function Destinations() {
   let addlist_all_name = photolist[number].title;
   let addlist_all_data = photolist[number].image;
 
-  console.log(photolist);
 
   return (
     <>
