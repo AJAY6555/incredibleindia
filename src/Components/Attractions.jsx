@@ -23,23 +23,17 @@ function Attractions() {
       title: "Hawa Mahal",
       img: "https://s7ap1.scene7.com/is/image/incredibleindia/hawa-mahal-jaipur-rajasthan-1-attr-nearby?qlt=82&ts=1742169186274",
     },
-    {
-      title: "Taj Mahal",
-      img: "https://s7ap1.scene7.com/is/image/incredibleindia/taj-mahal-agra-uttar-pradesh-1-attr-nearby?qlt=82&ts=1726650395114",
-    },
-    {
-      title: "Sanchi Stupa",
-      img: "https://s7ap1.scene7.com/is/image/incredibleindia/sanchi-stupa-bhopal-madhya-pradesh-1-attr-nearby?qlt=82&ts=1742156048029",
-    },
+   
   ];
   const MOvemuse = (e) => {
     Setmove(e);
   };
+
   return (
     <div
-    className="w-full "
+    className="w-full pb-10 "
     style={{
-      height: "1200px",
+      minHeight: "100vh",
       backgroundImage: `url(https://cdn.pixabay.com/photo/2019/12/27/06/16/hampi-4721762_1280.jpg)`,
       backgroundSize: "cover",
       backgroundPosition: "center",
@@ -47,6 +41,7 @@ function Attractions() {
         flexDirection: "column",
         justifyContent: "center", // vertical alignment (column me)
         alignItems: "center",
+        
       }}
       > 
   
@@ -61,7 +56,7 @@ function Attractions() {
       </div>
       
     </div>  {/* //the change and add animatiom// */}
-    <div className="flex justify-center items-center flex-wrap gap-4">
+    <div className="flex justify-center items-center gap-4">
   {places.map((place, index) => (
     
    <motion.div
@@ -79,7 +74,7 @@ function Attractions() {
 >
 
       <div
-        className="flex justify-center items-end w-[400px] h-[630px] rounded-lg bg-cover bg-center"
+        className="flex justify-center items-end w-[300px] h-[500px] rounded-lg bg-cover bg-center"
         style={{ backgroundImage: `url(${place.img})` }}
       >
         <div
