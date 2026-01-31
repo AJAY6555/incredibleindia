@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { FaAlignLeft, FaArrowRight } from "react-icons/fa";
-import { FaArrowLeft, FaLeftLong, FaRightLeft, FaRightLong } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa6";
 
 const Images = [
   {
