@@ -1,9 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaGlobe } from "react-icons/fa";
 import { FiSearch, FiUser, FiHeart, FiMenu } from "react-icons/fi";
 
 const Nav = () => {
   const [isHover, setIsHover] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // 👇 Scroll listener
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
@@ -11,7 +26,7 @@ const Nav = () => {
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         className={`transition-colors duration-300 ${
-          isHover ? "bg-black/90" : "bg-transparent"
+          isHover || isScrolled ? "bg-black/90" : "bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3 text-white">
@@ -40,8 +55,6 @@ const Nav = () => {
 
           {/* Right Icons */}
           <div className="flex items-center gap-4">
-            
-            {/* Language */}
             <button className="flex items-center gap-1 hover:text-orange-400 transition">
               <FaGlobe />
               <span className="text-sm">EN</span>
@@ -67,7 +80,6 @@ const Nav = () => {
 
             <div className="h-6 w-px bg-white/40"></div>
 
-            {/* Mobile Menu */}
             <button className="text-2xl hover:text-orange-400 transition md:hidden">
               <FiMenu />
             </button>
@@ -79,4 +91,3 @@ const Nav = () => {
 };
 
 export default Nav;
-

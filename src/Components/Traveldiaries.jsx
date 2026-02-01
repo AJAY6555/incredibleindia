@@ -91,7 +91,7 @@ const Traveldiaries = () => {
             onMouseEnter={() => setHovered(index)}
             onMouseLeave={() => setHovered(null)}
             animate={{
-              y: hovered === index ? -12 : 0,
+              y: hovered === index ? -120 : 0,
               boxShadow:
                 hovered === index
                   ? "0px 20px 40px rgba(0,0,0,0.35)"
