@@ -107,7 +107,7 @@ const Traveldiaries = () => {
             />
 
             {/* Text Content */}
-            <div className="bg-black bg-opacity-80 p-4 text-white">
+            <div className="bg-black bg-opacity-80 p-4 text-white h-full">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-red-500 text-sm sm:text-base font-semibold">
                   {place.area}
