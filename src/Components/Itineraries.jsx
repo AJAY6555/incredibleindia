@@ -63,12 +63,11 @@ function Itineraries() {
 
   return (
     <>
-      <div
+      <div className=" bg-cover bg-center"
         style={{
           backgroundImage:
-            'url("https://media.assettype.com/thequint/2018-03/70f25774-c3b2-48df-a05c-adafa8379677/40fd2926-0d40-479d-bbd5-f608c83d309d.jpg?auto=format,compress&fmt=webp&format=webp&w=1200&h=900&dpr=1.0")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+            'url("https://images.pond5.com/country-india-colorful-and-blurry-footage-141509988_iconl.jpeg")',
+          
           height: "100%",
           width: "100%",
         }}
