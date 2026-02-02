@@ -9,7 +9,7 @@ import Itineraries from './Components/Itineraries'
 import Nav from './Components/Nav'
 import Traveldiaries from './Components/Traveldiaries'
 import UncoverIndia from './Components/UncoverIndia'
-
+import Spin from './Components/Spin'
 function App() {
   
 
@@ -23,6 +23,7 @@ function App() {
       <Itineraries/>
       <UncoverIndia/>
       <Crafts/>
+      <Spin/>
       <Inspired/>
       <Footer/>
 
